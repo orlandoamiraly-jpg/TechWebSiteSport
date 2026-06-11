@@ -82,7 +82,7 @@ nav ul li a.actif {
    4. HERO (grande bannière de la page d'accueil)
    ───────────────────────────────────────────────────── */
 .hero {
-  background-image: url("image/imagechatgpt.png");
+  background-image: url("imagechatgpt.png");
   background-size: cover;
   background-position: center;
   text-align: center;
