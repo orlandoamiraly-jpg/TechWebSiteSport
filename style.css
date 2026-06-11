@@ -1,0 +1,585 @@
+:root {
+  --couleur-principale : #e85d04;   /* Orange dynamique */
+  --couleur-foncee     : #1a1a2e;   /* Bleu nuit (fond nav/footer) */
+  --couleur-sombre     : #16213e;   /* Fond hero */
+  --couleur-texte      : #333333;   /* Texte courant */
+  --couleur-fond       : #f5f5f0;   /* Fond de page */
+  --couleur-blanc      : #ffffff;
+  --couleur-gris-clair : #eeeeee;
+  --rayon-bord         : 8px;
+  --ombre              : 0 4px 16px rgba(0, 0, 0, 0.10);
+}
+
+/* ─────────────────────────────────────────────────────
+   2. RESET ET BASE
+   ───────────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+  line-height: 1.7;
+}
+
+/* ─────────────────────────────────────────────────────
+   3. NAVIGATION
+   ───────────────────────────────────────────────────── */
+nav {
+  background-color: var(--couleur-foncee);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 65px;
+  position: sticky;       /* La nav reste visible en scrollant */
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--couleur-principale);
+}
+
+.logo {
+  color: var(--couleur-principale);
+  font-family: Arial Black, sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;   /* Supprime les puces */
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: #cccccc;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;   /* Soulignage invisible par défaut */
+}
+
+/* Lien survolé */
+nav ul li a:hover {
+  color: var(--couleur-blanc);
+  border-bottom-color: var(--couleur-principale);
+}
+
+/* Lien de la page en cours */
+nav ul li a.actif {
+  color: var(--couleur-principale);
+  border-bottom-color: var(--couleur-principale);
+  font-weight: bold;
+}
+
+/* ─────────────────────────────────────────────────────
+   4. HERO (grande bannière de la page d'accueil)
+   ───────────────────────────────────────────────────── */
+.hero {
+  background-image: url("image/ChatGPT Image 6 juin 2026, 18_23_27.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 50px 30px 50px;
+  border: 1px solid var(--couleur-principale);
+  border-radius: 5px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 900;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.12);
+}
+.hero h2 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    margin-top: 10px;
+    text-shadow: 0 0 15px rgba(255,255,255,0.3);
+    color: var(--couleur-blanc);
+}
+
+
+.sous-titre {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 35px;
+  opacity: 0.9;
+  font-style: italic; 
+  color: var(--couleur-blanc);
+}
+
+/* ─────────────────────────────────────────────────────
+   5. BOUTON PRINCIPAL
+   ───────────────────────────────────────────────────── */
+.bouton {
+  display: inline-block;
+  background-color: var(--couleur-principale);
+  color: var(--couleur-blanc);
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: var(--rayon-bord);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.bouton:hover {
+  background-color: #bf4500;   /* Orange plus foncé au survol */
+}
+
+/* ─────────────────────────────────────────────────────
+   6. SECTION POINTS FORTS (Accueil)
+   ───────────────────────────────────────────────────── */
+.points-forts {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.points-forts h2 {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: var(--couleur-foncee);
+}
+
+/* Disposition en ligne des 3 cartes */
+.cartes {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;   /* Les cartes passent à la ligne sur petit écran */
+}
+
+.carte {
+  background-color: var(--couleur-blanc);
+  border-radius: var(--rayon-bord);
+  box-shadow: var(--ombre);
+  padding: 35px 25px;
+  width: 260px;
+  border-top: 4px solid var(--couleur-principale);
+}
+
+.carte .icone {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.carte h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--couleur-foncee);
+}
+
+/* ─────────────────────────────────────────────────────
+   7. EN-TÊTE DES PAGES INTERNES
+   ───────────────────────────────────────────────────── */
+.entete-page {
+  background-color: var(--couleur-foncee);
+  color: var(--couleur-blanc);
+  text-align: center;
+  padding: 50px 40px;
+}
+
+.entete-page h1 {
+  font-size: 2.2rem;
+  color: var(--couleur-principale);
+  margin-bottom: 12px;
+}
+
+.entete-page p {
+  font-style: italic;
+  opacity: 0.85;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ─────────────────────────────────────────────────────
+   8. SECTION EXERCICES (Programme)
+   ───────────────────────────────────────────────────── */
+.exercices {
+  max-width: 760px;
+  margin: 50px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exercice {
+  background-color: var(--couleur-blanc);
+  border-radius: var(--rayon-bord);
+  box-shadow: var(--ombre);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 25px;
+}
+
+.numero {
+  background-color: var(--couleur-principale);
+  color: var(--couleur-blanc);
+  font-family: Arial Black, sans-serif;
+  font-size: 1.4rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;          /* Cercle parfait */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;              /* Ne se rétrécit pas */
+}
+
+.details h3 {
+  font-size: 1.2rem;
+  color: var(--couleur-foncee);
+  margin-bottom: 5px;
+}
+
+.repetitions {
+  font-weight: bold;
+  color: var(--couleur-principale);
+  margin-bottom: 3px;
+}
+
+.muscles {
+  font-size: 0.88rem;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+/* Encadré informatif */
+.encadre-info {
+  max-width: 760px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.encadre-info p {
+  background-color: #fff8e1;
+  border-left: 4px solid #f4b942;
+  padding: 16px 20px;
+  border-radius: var(--rayon-bord);
+}
+
+/* ─────────────────────────────────────────────────────
+   9. SECTION RÈGLES
+   ───────────────────────────────────────────────────── */
+.regles {
+  max-width: 760px;
+  margin: 50px auto 40px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.regle {
+  background-color: var(--couleur-gris-clair);
+  border-radius: var(--rayon-bord);
+  box-shadow: var(--ombre);
+  display: flex;
+  gap: 25px;
+  padding: 25px;
+  align-items: flex-start;
+}
+
+.regle-numero {
+  font-family: Arial Black, sans-serif;
+  font-size: 2.5rem;
+  color: VAR(--couleur-principale);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 55px;
+}
+
+.regle-contenu h3 {
+  font-size: 1.2rem;
+  color: var(--couleur-foncee);
+  margin-bottom: 8px;
+}
+
+/* Tableau de progression */
+.tableau-section {
+  max-width: 760px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.tableau-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--couleur-foncee);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;   /* Fusionne les bordures */
+  background-color: var(--couleur-blanc);
+  box-shadow: var(--ombre);
+  border-radius: var(--rayon-bord);
+  overflow: hidden;
+}
+
+th {
+  background-color: var(--couleur-foncee);
+  color: var(--couleur-blanc);
+  padding: 12px 16px;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--couleur-gris-clair);
+  font-size: 0.95rem;
+}
+
+/* Alternance de couleurs dans le tableau (zebra striping) */
+tr:nth-child(even) td {
+  background-color: #fafafa;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* ─────────────────────────────────────────────────────
+   10. GALERIE
+   ───────────────────────────────────────────────────── */
+.galerie {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 50px auto 60px;
+  padding: 0 20px;
+}
+
+.carte-galerie {
+  background-color: var(--couleur-blanc);
+  border-radius: var(--rayon-bord);
+  box-shadow: var(--ombre);
+  width: 280px;
+  overflow: hidden;
+}
+
+/* Zone illustration colorée */
+.illustration {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;    /* Grand emoji comme illustration */
+}
+
+/* Couleurs différentes pour chaque exercice */
+.squat   { background-color: #fff3e0; }
+.pompes  { background-color: #e8f5e9; }
+.fentes  { background-color: #e3f2fd; }
+.gainage { background-color: #fce4ec; }
+.chaise  { background-color: #ede7f6; }
+
+/* Silhouettes simplifiées en CSS pur */
+
+
+/* Tête commune à toutes les silhouettes */
+.silhouette::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-color: var(--couleur-foncee);
+  border-radius: 50%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.7;
+}
+
+/* Corps */
+.silhouette::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 45px;
+  background-color: var(--couleur-foncee);
+  border-radius: 4px;
+  top: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+}
+
+.legende {
+  padding: 18px 20px;
+}
+
+.legende h3 {
+  font-size: 1.05rem;
+  color: var(--couleur-foncee);
+  margin-bottom: 6px;
+}
+
+.legende p {
+  font-size: 0.88rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--couleur-principale);
+  color: var(--couleur-blanc);
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* ─────────────────────────────────────────────────────
+   11. SECTION CONTACT
+   ───────────────────────────────────────────────────── */
+.contact-section {
+  max-width: 960px;
+  margin: 50px auto 60px;
+  padding: 0 20px;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.formulaire-bloc {
+  flex: 2;
+  background-color: var(--couleur-blanc);
+  border-radius: var(--rayon-bord);
+  box-shadow: var(--ombre);
+  padding: 35px;
+  min-width: 280px;
+}
+
+.formulaire-bloc h2 {
+  font-size: 1.4rem;
+  color: var(--couleur-foncee);
+  margin-bottom: 25px;
+}
+
+/* Chaque champ du formulaire */
+.champ {
+  margin-bottom: 20px;
+}
+
+.champ label {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: var(--couleur-foncee);
+}
+
+/* Styles communs : input, select, textarea */
+.champ input,
+.champ select,
+.champ textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: var(--rayon-bord);
+  font-family: Georgia, serif;
+  font-size: 0.95rem;
+  background-color: #fafafa;
+  color: var(--couleur-texte);
+}
+
+.champ input:focus,
+.champ select:focus,
+.champ textarea:focus {
+  outline: none;
+  border-color: var(--couleur-principale);
+}
+
+/* Informations de contact */
+.infos-contact {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.infos-contact h2 {
+  font-size: 1.4rem;
+  color: var(--couleur-foncee);
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background-color: var(--couleur-blanc);
+  padding: 16px;
+  border-radius: var(--rayon-bord);
+  box-shadow: var(--ombre);
+}
+
+.info-icone {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.info-item strong {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  color: var(--couleur-foncee);
+  margin-bottom: 3px;
+}
+
+.info-item p {
+  font-size: 0.88rem;
+  color: #555;
+}
+
+.contact-item a {
+  text-decoration: pixelated underline;
+  font-family: Arial, sans-serif;
+  color: var(--couleur-principale);
+
+}
+
+/* ─────────────────────────────────────────────────────
+   12. PIED DE PAGE
+   ───────────────────────────────────────────────────── */
+footer {
+  background-color: var(--couleur-foncee);
+  color: #aaaaaa;
+  text-align: center;
+  padding: 5px 50px;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+}
+
+/* Ce bloc s'applique UNIQUEMENT si l'écran fait moins de 768px */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        gap: 10px;
+    }
+    .hero h1 {
+        font-size: 2rem;   /* Plus petit sur mobile */
+    }
+}

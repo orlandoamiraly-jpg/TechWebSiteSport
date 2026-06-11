@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAOKY — Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== BARRE DE NAVIGATION ===== -->
+  <nav>
+    <div class="logo">💪 RAOKY 🦍🔥</div>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="programme.html">Programme</a></li>
+      <li><a href="regles.html">Règles</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="contact.html" class="actif">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== EN-TÊTE DE PAGE ===== -->
+  <div class="entete-page">
+    <h1>Contactez-nous</h1>
+    <p>Une question sur le programme ? Envoyez-nous un message !</p>
+  </div>
+
+  <!-- ===== SECTION CONTACT ===== -->
+  <section class="contact-section">
+
+    <!-- Formulaire -->
+    <div class="formulaire-bloc">
+      <h2>Envoyer un message</h2>
+
+      <!-- NOTE : En L1, le formulaire est statique (pas de traitement serveur) -->
+      <form action="#" method="post">
+
+        <div class="champ">
+          <label for="nom">Votre nom</label>
+          <input type="text" id="nom" name="nom" placeholder="Ex : Jean Dupont">
+        </div>
+
+        <div class="champ">
+          <label for="email">Votre email</label>
+          <input type="email" id="email" name="email" placeholder="Ex : jean@email.com">
+        </div>
+
+        <div class="champ">
+          <label for="sujet">Sujet</label>
+          <select id="sujet" name="sujet">
+            <option value="">-- Choisissez un sujet --</option>
+            <option value="programme">Question sur le programme</option>
+            <option value="progression">Conseils de progression</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+
+        <div class="champ">
+          <label for="message">Votre message</label>
+          <textarea id="message" name="message" rows="5"
+            placeholder="Écrivez votre message ici..."></textarea>
+        </div>
+
+        <button type="submit" class="bouton">Envoyer le message</button>
+
+      </form>
+    </div>
+
+    <!-- Informations de contact -->
+    <div class="infos-contact">
+      <h2>Informations</h2>
+
+      <div class="info-item">
+        <span class="info-icone">🔗</span>
+        <div>
+          <strong>Coordonnées</strong>
+          <p class="contact-item">What'App:<a href="https://wa.me/261343173148" target="_blank" rel="nooper noreferrer">034 31 731 48 </a></p>
+          <p class="contact-item">Facebook:<a href="https://www.facebook.com/orlando.amiral.5" target="_blank" rel="nooper noreferrer">Orlando Amiraly</a></p>
+          <p class="contact-item">Instagram:<a href="https://www.instagram.com/or_amiraly/" target="_blank" rel="nooper noreferrer">Or-amiraly</a></p>
+          <p class="contact-item">Twitter:<a href="https://x.com/OrAmiraly" target="_blank" rel="nooper noreferrer">or_amiraly</a></p>
+          <p class="contact-item">Linkedin:<a href="https://www.linkedin.com/in/orlando-amiraly-64a559398?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="nooper noreferrer">Orlando Amiraly</a></p>
+          <p class="contact-item">Mail:<a href="mailto:orlandoamiraly@mail.com" target="_blank" rel="nooper noreferrer">orlandoamiraly@mail.com</a></p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <span class="info-icone">📍</span>
+        <div>
+          <strong>Localisation</strong>
+          <p>Projet en ligne — accessible partout</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <span class="info-icone">🕐</span>
+        <div>
+          <strong>Réponse sous</strong>
+          <p>48 heures en semaine</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <span class="info-icone">🎓</span>
+        <div>
+          <strong>Projet universitaire</strong>
+          <p>L1 Informatique — Parcours DA2I<br>2025 – 2026</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ===== PIED DE PAGE ===== -->
+  <footer>
+    <p>© 2026 💪 RAOKY 🦍🔥 — Projet Tech Web L1 Informatique · Parcours DA2I à l'EMIT</p>
+  </footer>
+
+</body>
+</html>
